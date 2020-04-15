@@ -16,7 +16,7 @@
 #define USER_MQTT_PORT            1883
 #define USER_MQTT_USERNAME        "YOUR_MQTT_USER_NAME"
 #define USER_MQTT_PASSWORD        "YOUR_MQTT_PASSWORD"
-#define USER_MQTT_CLIENT_NAME     "BlindsMCU"         // Used to define MQTT topics, MQTT Client ID, and ArduinoOTA
+#define USER_MQTT_CLIENT_NAME     "OfficeDoorMCU"         // Used to define MQTT topics, MQTT Client ID, and ArduinoOTA
 
 #define STEPPER_SPEED             35                  //Defines the speed in RPM for your stepper motor
 #define STEPPER_STEPS_PER_REV     1028                //Defines the number of pulses that is required for the stepper to rotate 360 degrees
