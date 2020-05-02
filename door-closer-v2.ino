@@ -40,7 +40,8 @@ EspMQTTClient client(
   1883              // The MQTT port, default to 1883. this line can be omitted
 );
 
-
+// Move the stepper forward (+ value) or backward (- value) the number of steps
+//spesified in the FINE_TUNE_TOPIC topic.
 void processStepperFine(const String & payload)
 {
   // Convert the String to int so we can do some math on it
@@ -53,7 +54,7 @@ void processStepperFine(const String & payload)
   Serial.print("inPayload is =");
   Serial.print(intPayload);
   Serial.println();
-// Move forward the amount of steps in the "CLOSER_MOVE_TOPIC" topic and then back the same amount
+
   if (intPayload >= 1){
       for (int i = 0; i <= intPayload; i++) {
       stepper.move(1, FORWARD);
@@ -69,6 +70,7 @@ void processStepperFine(const String & payload)
   }
 }
 
+// Move forward the amount of steps in the "CLOSER_MOVE_TOPIC" topic and then back the same amount
 
 void processStepper(const String & payload)
 {
@@ -91,23 +93,6 @@ void processStepper(const String & payload)
       yield();
     }
 }
-
-void testFunction(const String & payload)
-{
-    Serial.println("In testFunction");
-    Serial.print("Payload = ");
-    Serial.println(payload);
-
-}
-
-void testFunction2(const String & payload)
-{
-    Serial.println("In testFunction 2");
-    Serial.print("Payload = ");
-    Serial.println(payload);
-
-}
-
 
 void setup()
 {
