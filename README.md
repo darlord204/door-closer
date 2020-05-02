@@ -52,4 +52,4 @@ switch:
       topic: door_closer/stepFine
     service: mqtt.publish
 
-    ```
+```
